@@ -10,7 +10,7 @@ services:
       restart: always
 
       working_dir: /usr/src/app
-      command: sh -c 'npm install && npm run dev'
+      command: sh -c 'npm install --only=production && npm build && npm start'
       ports:
         - "3000:3000"
 
