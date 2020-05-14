@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  client:
+      image: node:alpine
+
+      volumes:
+        - ./client:/usr/src/app
+
+      restart: always
+
+      working_dir: /usr/src/app
+      command: sh -c 'npm install && npm run dev'
+      ports:
+        - "3000:3000"
+
+  # server:
+  #     image: node:alpine
+
+  #     volumes:
+  #       - ./client:/usr/src/app
+
+  #     restart: always
+
+  #     working_dir: /usr/src/app
+  #     command: sh -c 'npm install && npm run dev'
+  #     ports:
+  #       - "8080:8080"
